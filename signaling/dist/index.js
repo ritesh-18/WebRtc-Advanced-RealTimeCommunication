@@ -60,7 +60,7 @@ wss.on('connection', (ws) => {
                 return;
             }
         }
-        else if (message.type === 'add-ice-candidate') {
+        else if (message.type === 'new-ice-candidate') {
             const targetSocket = ws === senderSocket ? receiverSocket : senderSocket; // if sender is there then forward to receiver else forward to sender
             if (targetSocket) {
                 console.log("Forwarding ice candidate to the other peer");
